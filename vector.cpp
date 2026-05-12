@@ -120,3 +120,8 @@ constexpr void Vector<T>::assign_range(R&& r)//assign funkcija su range
         elem[i++] = std::forward<decltype(value)>(value);
     }
 }
+template <typename T>
+typename Vector<T>::allocator_type Vector<T>::get_allocator() const//get allocator funkcija
+{
+    return allocator_type();
+}
