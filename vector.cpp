@@ -15,6 +15,13 @@ Vector<T>::Vector(size_type s)//konstruktorius su dydziu
     cap = s;
 }
 template <typename T>
+Vector<T>::~Vector()//destruktorius
+{
+    delete[] elem;
+    sz = 0;
+    cap = 0;
+}
+template <typename T>
 Vector<T>::Vector(const Vector& r)//kopijavimo konstruktorius
 {
     elem = new T[r.cap];
