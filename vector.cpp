@@ -51,15 +51,16 @@ Vector<T>& Vector<T>::operator=(const Vector& r) //kopijavimo priskyrimo operato
     sz = r.sz;
     cap = r.cap;
     elem = new T[cap];
-    for(size_type i=0; i<sz;i+=)
-    elem[i] = r.elem[i];
+    for(size_type i = 0; i < sz; i++){
+        elem[i] = r.elem[i];
+    }
     return *this;
 }
 template <typename T>
 Vector<T>& Vector<T>::operator=(Vector&& r)//move priskyrimo operatorius
 {
     if(this ==&r)
-    returnt *this;
+    return *this;
     delete[] elem;
 
     elem = r.elem;
@@ -78,7 +79,7 @@ void Vector<T>::assign(size_type count, const T& value)//assign funkcija su dvie
     elem = new T[count];
     sz = count;
     cap = count;
-    for(size_type i=0; i<sz; i++){
+    for(size_type i = 0; i < sz; i++){
         elem[i] = value;
     }
 }
@@ -88,7 +89,7 @@ void Vector<T>::assign(std::initializer_list<T> ilist)//assign funkcija su initi
     delete[] elem;
     sz = ilist.size();
     cap = ilist.size();
-    elem = new T[cap];
+    elem = (cap == 0 ) ? nullptr : new T[cap];//jei cap yra 0, tai elem bus nullptr, kitaip bus sukuriamas naujas masyvas
     size_type i = 0;
     for(const auto& value : ilist){
         elem[i++] = value;
@@ -101,7 +102,7 @@ void Vector<T>::assign(InputIt first, InputIt last)//assign funkcija su iterator
     delete[] elem;
     sz = static_cast<size_type>(std::distance(first, last));
     cap = sz;
-    elem = new T[cap];
+    elem = (cap == 0 ) ? nullptr : new T[cap];
     size_type i = 0;
     for(InputIt it = first; it != last; ++it){
         elem[i++] = *it;
@@ -114,7 +115,7 @@ constexpr void Vector<T>::assign_range(R&& r)//assign funkcija su range
     delete[] elem;
     sz = static_cast<size_type>(std::distance(std::begin(r), std::end(r)));
     cap = sz;
-    elem = new T[cap];
+    elem = (cap == 0 ) ? nullptr : new T[cap];
     size_type i = 0;
     for(auto&& value : r){
         elem[i++] = std::forward<decltype(value)>(value);

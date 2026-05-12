@@ -38,7 +38,7 @@ public:
     void assign (std::initializer_list<T> ilist);
     template <typename InputIt>
     void assign (InputIt first, InputIt last);
-    template< container-compatible-range<T> R>
+    template< typename R>
     constexpr void assign_range( R&& r );
     allocator_type get_allocator() const;
 
