@@ -1,6 +1,8 @@
 #pragma once
 #include <stdio.h>
-
+#include <cstddef>
+#include <iterator>
+#include <memory>
 template <typename T>
 class Vector {
 public:

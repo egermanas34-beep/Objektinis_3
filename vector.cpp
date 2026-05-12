@@ -71,3 +71,39 @@ Vector<T>& Vector<T>::operator=(Vector&& r)//move priskyrimo operatorius
     return *this;
 
 }
+template <typename T>
+void Vector<T>::assign(size_type count, const T& value)//assign funkcija su dviem parametrais
+{
+    delete[] elem;
+    elem = new T[count];
+    sz = count;
+    cap = count;
+    for(size_type i=0; i<sz; i++){
+        elem[i] = value;
+    }
+}
+template <typename T>
+void Vector<T>::assign(std::initializer_list<T> ilist)//assign funkcija su initializer list
+{
+    delete[] elem;
+    sz = ilist.size();
+    cap = ilist.size();
+    elem = new T[cap];
+    size_type i = 0;
+    for(const auto& value : ilist){
+        elem[i++] = value;
+    }
+}
+template <typename T>
+template <typename InputIt>
+void Vector<T>::assign(InputIt first, InputIt last)//assign funkcija su iteratoriais
+{
+    delete[] elem;
+    sz = static_cast<size_type>(std::distance(first, last));
+    cap = sz;
+    elem = new T[cap];
+    size_type i = 0;
+    for(InputIt it = first; it != last; ++it){
+        elem[i++] = *it;
+    }
+}
