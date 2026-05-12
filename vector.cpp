@@ -107,3 +107,16 @@ void Vector<T>::assign(InputIt first, InputIt last)//assign funkcija su iterator
         elem[i++] = *it;
     }
 }
+template <typename T>
+template <typename R>
+constexpr void Vector<T>::assign_range(R&& r)//assign funkcija su range
+{
+    delete[] elem;
+    sz = static_cast<size_type>(std::distance(std::begin(r), std::end(r)));
+    cap = sz;
+    elem = new T[cap];
+    size_type i = 0;
+    for(auto&& value : r){
+        elem[i++] = std::forward<decltype(value)>(value);
+    }
+}
