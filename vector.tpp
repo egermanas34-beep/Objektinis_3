@@ -526,8 +526,94 @@ void Vector<T>::resize(size_type count, const value_type& value)//resize funkcij
 template <typename T>
 constexpr void Vector<T>::swap(Vector<T>& other) noexcept//swap funkcija
 {
-    using std::swap;
+    
     swap(elem, other.elem);
     swap(sz, other.sz);
     swap(cap, other.cap);
+}
+template <typename T>
+bool Vector<T>::operator==(const Vector& other) const//operator ==
+{
+    if(sz != other.sz)
+    {
+        return false;
+    }
+    for(size_type i = 0; i < sz; i++)
+    {
+        if(elem[i] != other.elem[i])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+template <typename T>
+bool Vector<T>::operator!=(const Vector& other) const//operator !=
+{
+    return !(*this == other);
+}
+template <typename T>
+bool Vector<T>::operator<(const Vector& other) const//operator <
+{
+    size_type min_size = std::min(sz, other.sz);
+    for(size_type i = 0; i < min_size; i++)
+    {
+        if(elem[i] < other.elem[i])
+        {
+            return true;
+        }
+        else if(elem[i] > other.elem[i])
+        {
+            return false;
+        }
+    }
+    return sz < other.sz;   
+}
+template <typename T>
+bool Vector<T>::operator>(const Vector& other) const//operator >
+{
+    return other < *this;
+}
+template <typename T>
+bool Vector<T>::operator<=(const Vector& other) const//operator <=
+{
+    return !(other < *this);
+}
+template <typename T>
+bool Vector<T>::operator>=(const Vector& other) const//operator >=
+{
+    return !(*this < other);
+}
+template <typename T>
+void swap(Vector<T>& a, Vector<T>& b) noexcept//swap funkcija friend
+{
+    a.swap(b);
+}
+template <typename T>
+void erase(Vector<T>& v, const T& value)//erase funkcija su verte
+{
+    for(typename Vector<T>::size_type i = 0; i < v.size(); i++)
+    {
+        if(v[i] == value)
+        {
+            v.erase(v.begin() + i);
+            --i;
+        }
+    }
+}
+template <typename T, typename Pred>
+void erase_if(Vector<T>& v, Pred p)//erase if funkcija
+{
+    typename Vector<T>::size_type i = 0;
+    while(i < v.size())
+    {
+        if(p(v[i]))
+        {
+            v.erase(v.begin() + i);
+        }
+        else{
+            ++i;
+        }
+        
+    }
 }

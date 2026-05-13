@@ -91,5 +91,16 @@ public:
     void resize(size_type count);
     void resize(size_type count, const value_type& value);
     constexpr void swap(Vector& other) noexcept;
+    //non-member functions
+    bool operator==(const Vector& other) const;
+    bool operator!=(const Vector& other) const;
+    bool operator<(const Vector& other) const;
+    bool operator<=(const Vector& other) const;
+    bool operator>(const Vector& other) const;
+    bool operator>=(const Vector& other) const;
+    void swap(Vector& a, Vector& b) noexcept;
+    void erase(Vector& v, const T& value);
+    template <typename Pred>
+    void erase_if(Vector v, Pred p);
 };
 #include "vector.tpp"
