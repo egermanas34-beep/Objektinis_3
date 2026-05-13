@@ -416,3 +416,38 @@ typename Vector<T>::reference Vector<T>::emplace_back(Args&&... args)//emplace b
     ++sz;
     return elem[sz - 1];
 }
+template <typename T>
+typename Vector<T>::iterator Vector<T>::erase(const_iterator pos)//erase funkcija su vienu iteratoriumi
+{
+    size_type index = pos - begin();
+    for(size_type i = index; i < sz - 1; i++)
+    {
+        elem[i] = std::move(elem[i + 1]);
+    }
+    --sz;
+    return begin() + index;
+}
+template <typename T>
+typename Vector<T>::iterator Vector<T>::erase(const_iterator first, const_iterator last)//erase funkcija su dviem iteratoriais
+{
+    size_type index = first - begin();
+    size_type count = last - first;
+    for(size_type i = index; i < sz - count; i++)
+    {
+        elem[i] = std::move(elem[i + count]);
+    }
+    sz -= count;
+    return begin() + index;
+}
+template <typename T>
+typename Vector<T>::iterator Vector<T>::erase(const_iterator first, const_iterator last)//erase funkcija intervalui
+{
+    size_type index = first - begin();
+    size_type count = last - first;
+    for(size_type i = index; i + count < sz; i++)
+    {
+        elem[i] = std::move(elem[i+count]);
+    }
+    sz -= count;
+    return begin() + index;
+}

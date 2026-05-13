@@ -81,5 +81,7 @@ public:
     iterator emplace(const_iterator pos, Args&&... args);
     template <typename... Args>
     reference emplace_back(Args&&... args);
+    iterator erase(const_iterator pos);
+    iterator erase(const_iterator first, const_iterator last);
 };
 #include "vector.tpp"
