@@ -87,5 +87,7 @@ public:
     void push_back(T&& value);
     template <typename R>
     constexpr void append_range(R&& rg);
+    void pop_back();
+    
 };
 #include "vector.tpp"

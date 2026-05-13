@@ -481,3 +481,11 @@ constexpr void Vector<T>::append_range(R&& rg)//append range funkcija
         push_back(value);
     }
 }
+template <typename T>
+void Vector<T>::pop_back()//pop back funkcija
+{
+    if(sz > 0)
+    {
+        --sz;
+    }
+}
