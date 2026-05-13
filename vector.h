@@ -77,5 +77,9 @@ public:
     iterator insert(const_iterator pos, std::initializer_list<T> ilist);
    
     constexpr iterator insert_range( const_iterator pos,std::initializer_list<T> ilist);
+    template <class... Args>
+    iterator emplace(const_iterator pos, Args&&... args);
+    template <typename... Args>
+    reference emplace_back(Args&&... args);
 };
 #include "vector.tpp"

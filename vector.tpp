@@ -387,3 +387,32 @@ constexpr typename Vector<T>::iterator Vector<T>::insert_range(const_iterator po
     sz += count;
     return begin() + index;
 }
+template <typename T>
+template <class... Args>
+typename Vector<T>::iterator Vector<T>::emplace(const_iterator pos, Args&&... args)//emplace funkcija
+{
+    size_type index = pos - begin();
+    if(sz >= cap)
+    {
+        reserve(cap == 0 ? 1 : cap * 2);
+    }
+    for(size_type i = sz; i > index; i--)
+    {
+        elem[i] = std::move(elem[i - 1]);
+    }
+    elem[index] = T(std::forward<Args>(args)...);
+    ++sz;
+    return begin() + index;
+}
+template <typename T>
+template <typename... Args>
+typename Vector<T>::reference Vector<T>::emplace_back(Args&&... args)//emplace back funkcija
+{
+    if(sz >= cap)
+    {
+        reserve(cap == 0 ? 1 : cap * 2);
+    }
+    elem[sz] = T(std::forward<Args>(args)...);
+    ++sz;
+    return elem[sz - 1];
+}
