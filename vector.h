@@ -66,7 +66,7 @@ public:
     size_type max_size() const noexcept;
     size_type capacity() const noexcept;
     void reserve(size_type new_cap);
-    void shirnk_to_fit();
+    void shrink_to_fit();
     //modifiers
     void clear() noexcept;
     iterator insert(const_iterator pos, const T& value);
@@ -75,4 +75,6 @@ public:
     template <typename InputIt>
     iterator insert(const_iterator pos, InputIt first, InputIt last);
     iterator insert(const_iterator pos, std::initializer_list<T> ilist);
+    
 };
+#include "vector.tpp"
