@@ -199,3 +199,18 @@ typename Vector<T>::const_reverse_iterator Vector<T>::crbegin() const noexcept//
 {
     return const_reverse_iterator(cend());
 }
+template <typename T>
+typename Vector<T>::reverse_iterator Vector<T>::rend() noexcept//rend funkcija
+{
+    return reverse_iterator(begin());
+}
+template <typename T>
+typename Vector<T>::const_reverse_iterator Vector<T>::rend() const noexcept//const rend funkcija
+{
+    return const_reverse_iterator(begin());
+}
+template <typename T>
+typename Vector<T>::const_reverse_iterator Vector<T>::crend() const noexcept//crend funkcija
+{
+    return const_reverse_iterator(cbegin());
+}
