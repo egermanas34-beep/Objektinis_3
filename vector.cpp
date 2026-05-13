@@ -249,3 +249,18 @@ void Vector<T>::reserve(size_type new_cap)//reserve funkcija
         cap = new_cap;
     }
 }
+template <typename T>
+void Vector<T>::shirnk_to_fit()//shrink to fit funkcija
+{
+    if(sz < cap)
+    {
+        T* new_elem = (sz == 0) ? nullptr : new T[sz];
+        for(size_type i = 0; i < sz; i++)
+        {
+            new_elem[i] = elem[i];
+        }
+        delete[] elem;
+        elem = new_elem;
+        cap = sz;
+    }
+}
