@@ -126,3 +126,11 @@ typename Vector<T>::allocator_type Vector<T>::get_allocator() const//get allocat
 {
     return allocator_type();
 }
+template <typename T>
+typename Vector<T>::reference Vector<T>::at(size_type pos)//at funkcija
+{
+    if((pos < 0) || (pos >= sz)){
+        throw std::out_of_range("Index out of range");
+    }
+    return elem[pos];
+}

@@ -6,6 +6,7 @@
 template <typename T>
 class Vector {
 public:
+//member types
 using value_type = T;
 using allocator_type = std::allocator<T>;
 using size_type = std::size_t;
@@ -23,17 +24,16 @@ private:
     size_type sz;
     size_type cap;    
 public:
+    //constructors, destructor, assignment operators
     Vector();//konstruktorius
     Vector(size_type s);//konstruktorius su dydziu
-
-   
-    
     Vector(const Vector& r);//kopijavimo konstruktorius
     Vector& operator=(const Vector& r);//kopijavimo priskyrimo operatorius
     Vector(Vector&& r);//perkelimo(move) konstruktorius
     Vector& operator=(Vector&& r);//perkelimo(move) priskyrimo operatorius
-
     ~Vector();//destruktorius
+
+    //member functions
     void assign (size_type count, const T& value);
     void assign (std::initializer_list<T> ilist);
     template <typename InputIt>
@@ -41,6 +41,7 @@ public:
     template< typename R>
     constexpr void assign_range( R&& r );
     allocator_type get_allocator() const;
-
+    //element access
+    reference at(size_type pos);
 
 };
