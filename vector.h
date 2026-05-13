@@ -46,4 +46,5 @@ public:
     reference operator[]( size_type pos);
     reference front();
     reference back();
+    T* data() noexcept;
 };

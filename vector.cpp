@@ -149,3 +149,8 @@ typename Vector<T>::reference Vector<T>::back()//back funkcija
 {
     return elem[sz - 1];
 }
+template <typename T>
+T* Vector<T>::data() noexcept//data funkcija
+{
+    return elem;
+}
