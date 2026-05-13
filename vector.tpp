@@ -451,3 +451,33 @@ typename Vector<T>::iterator Vector<T>::erase(const_iterator first, const_iterat
     sz -= count;
     return begin() + index;
 }
+template <typename T>
+void Vector<T>::push_back(const T& value)//push back funkcija su const T& value
+{
+    if(sz >= cap)
+    {
+        reserve(cap == 0 ? 1 : cap * 2);
+    }
+    elem[sz] = value;
+    ++sz;
+}
+template <typename T>
+void Vector<T>::push_back(T&& value)//push back funkcija su T&& value
+{
+    if(sz >= cap)
+    {
+        reserve(cap == 0 ? 1 : cap * 2);
+    }
+    elem[sz] = std::move(value);
+    ++sz;
+}
+template <typename T>
+template <typename R>
+constexpr void Vector<T>::append_range(R&& rg)//append range funkcija
+{
+    
+    for(auto&& value : rg)
+    {
+        push_back(value);
+    }
+}

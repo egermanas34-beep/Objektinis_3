@@ -83,5 +83,9 @@ public:
     reference emplace_back(Args&&... args);
     iterator erase(const_iterator pos);
     iterator erase(const_iterator first, const_iterator last);
+    void push_back(const T& value);
+    void push_back(T&& value);
+    template <typename R>
+    constexpr void append_range(R&& rg);
 };
 #include "vector.tpp"
