@@ -365,3 +365,25 @@ typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, std::initiali
     sz += count;
     return begin() + index;
 }
+template <typename T>
+constexpr typename Vector<T>::iterator Vector<T>::insert_range(const_iterator pos, std::initializer_list<T> ilist)
+{
+    size_type index = pos - begin();
+    size_type count = ilist.size();
+    if(sz + count > cap)
+    {
+        reserve((cap == 0) ? count : std::max(cap * 2, sz + count));
+    }
+    for(size_type i = sz; i >= index; i--)
+    {
+        elem[i + count - 1] = elem[i - 1];
+    }
+    size_type i = 0;
+    for(const auto& value : ilist)
+    {
+        elem[index + i] = value;
+        ++i;
+    }
+    sz += count;
+    return begin() + index;
+}

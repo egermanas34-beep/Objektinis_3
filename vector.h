@@ -75,6 +75,7 @@ public:
     template <typename InputIt>
     iterator insert(const_iterator pos, InputIt first, InputIt last);
     iterator insert(const_iterator pos, std::initializer_list<T> ilist);
-    
+   
+    constexpr iterator insert_range( const_iterator pos,std::initializer_list<T> ilist);
 };
 #include "vector.tpp"
