@@ -169,3 +169,18 @@ typename Vector<T>::const_iterator Vector<T>::cbegin() const noexcept//cbegin fu
 {
     return elem;
 }
+template <typename T>
+typename Vector<T>::iterator Vector<T>::end() noexcept//end funkcija
+{
+    return elem + sz;
+}
+template <typename T>
+typename Vector<T>::const_iterator Vector<T>::end() const noexcept//const end funkcija
+{
+    return elem + sz;
+}
+template <typename T>
+typename Vector<T>::const_iterator Vector<T>::cend() const noexcept//cend funkcija
+{
+    return elem + sz;
+}
