@@ -47,4 +47,8 @@ public:
     reference front();
     reference back();
     T* data() noexcept;
+    //iterators
+    iterator begin() noexcept;
+    const_iterator begin() const noexcept;
+    const_iterator cbegin() const noexcept;
 };

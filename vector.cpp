@@ -154,3 +154,18 @@ T* Vector<T>::data() noexcept//data funkcija
 {
     return elem;
 }
+template <typename T>
+typename Vector<T>::iterator Vector<T>::begin() noexcept//begin funkcija
+{
+    return elem;
+}
+template <typename T>
+typename Vector<T>::const_iterator Vector<T>::begin() const noexcept//const begin funkcija
+{
+    return elem;
+}
+template <typename T>
+typename Vector<T>::const_iterator Vector<T>::cbegin() const noexcept//cbegin funkcija
+{
+    return elem;
+}
