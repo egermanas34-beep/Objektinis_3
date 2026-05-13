@@ -269,3 +269,99 @@ void Vector<T>::clear() noexcept//clear funkcija
 {
     sz = 0;  
 }
+template <typename T>
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, const T& value)//insert funkcija su const T& value
+{
+    size_type index = pos - begin();
+    if(sz >= cap)
+    {
+        reserve(cap == 0 ? 1 : cap * 2);
+    }
+    for(size_type i = sz; i > index; i--)
+    {
+        elem[i] = elem[i - 1];
+    }
+    elem[index] = value;
+    ++sz;
+    return begin() + index;
+}
+template <typename T>
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, T&& value)//insert funkcija su T&& value
+{
+    size_type index = pos - begin();
+    if(sz >= cap)
+    {
+        reserve(cap == 0 ? 1 : cap * 2);
+    }
+    for(size_type i = sz; i > index; i--)
+    {
+        elem[i] = std::move(elem[i - 1]);
+    }
+    elem[index] = std::move(value);
+    ++sz;
+    return begin() + index;
+}
+template <typename T>
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, size_type count, const T& value)//insert funkcija su count ir value
+{
+    size_type index = pos - begin();
+    if(sz + count > cap)
+    {
+        reserve((cap == 0) ? count : std::max(cap * 2, sz + count));
+    }
+    for(size_type i = sz; i >= index; i--)
+    {
+        elem[i + count - 1] = elem[i - 1];
+    }
+    for(size_type i = 0; i < count; i++)
+    {
+        elem[index + i] = value;
+    }
+    sz += count;
+    return begin() + index;
+}
+template <typename T>
+template <typename InputIt>
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, InputIt first, InputIt last)//insert funkcija su iteratoriais
+{
+    size_type index = pos - begin();
+    size_type count = static_cast<size_type>(std::distance(first, last));
+    if(sz + count > cap)
+    {
+        reserve((cap == 0) ? count : std::max(cap * 2, sz + count));
+    }
+    for(size_type i = sz; i >= index; i--)
+    {
+        elem[i + count - 1] = elem[i - 1];
+    }
+    size_type i = 0;
+    for(InputIt it = first; it != last; ++it)
+    {
+        elem[index + i] = *it;
+        ++i;
+    }
+    sz += count;
+    return begin() + index;
+}
+template <typename T>
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, std::initializer_list<T> ilist)//insert funkcija su initializer list
+{
+    size_type index = pos - begin();
+    size_type count = ilist.size();
+    if(sz + count > cap)
+    {
+        reserve((cap == 0) ? count : std::max(cap * 2, sz + count));
+    }
+    for(size_type i = sz; i >= index; i--)
+    {
+        elem[i + count - 1] = elem[i - 1];
+    }
+    size_type i = 0;
+    for(const auto& value : ilist)
+    {
+        elem[index + i] = value;
+        ++i;
+    }
+    sz += count;
+    return begin() + index;
+}

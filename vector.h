@@ -69,5 +69,10 @@ public:
     void shirnk_to_fit();
     //modifiers
     void clear() noexcept;
-    
+    iterator insert(const_iterator pos, const T& value);
+    iterator insert(const_iterator pos, T&& value);
+    iterator insert(const_iterator pos, size_type count, const T& value);
+    template <typename InputIt>
+    iterator insert(const_iterator pos, InputIt first, InputIt last);
+    iterator insert(const_iterator pos, std::initializer_list<T> ilist);
 };
