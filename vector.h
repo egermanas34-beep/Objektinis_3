@@ -60,4 +60,6 @@ public:
     reverse_iterator rend() noexcept;
     const_reverse_iterator rend() const noexcept;
     const_reverse_iterator crend() const noexcept;
+    //capacity
+    bool empty() const noexcept;
 };
