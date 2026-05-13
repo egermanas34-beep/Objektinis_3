@@ -264,3 +264,8 @@ void Vector<T>::shirnk_to_fit()//shrink to fit funkcija
         cap = sz;
     }
 }
+template <typename T>
+void Vector<T>::clear() noexcept//clear funkcija
+{
+    sz = 0;  
+}

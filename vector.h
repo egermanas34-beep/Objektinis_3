@@ -67,4 +67,7 @@ public:
     size_type capacity() const noexcept;
     void reserve(size_type new_cap);
     void shirnk_to_fit();
+    //modifiers
+    void clear() noexcept;
+    
 };
