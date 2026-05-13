@@ -184,3 +184,18 @@ typename Vector<T>::const_iterator Vector<T>::cend() const noexcept//cend funkci
 {
     return elem + sz;
 }
+template <typename T>
+typename Vector<T>::reverse_iterator Vector<T>::rbegin() noexcept//rbegin funkcija
+{
+    return reverse_iterator(end());
+}
+template <typename T>
+typename Vector<T>::const_reverse_iterator Vector<T>::rbegin() const noexcept//const rbegin funkcija
+{
+    return const_reverse_iterator(end());
+}
+template <typename T>
+typename Vector<T>::const_reverse_iterator Vector<T>::crbegin() const noexcept//crbegin funkcija
+{
+    return const_reverse_iterator(cend());
+}
