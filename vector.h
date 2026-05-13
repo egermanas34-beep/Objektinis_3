@@ -43,5 +43,7 @@ public:
     allocator_type get_allocator() const;
     //element access
     reference at(size_type pos);
-
+    reference operator[]( size_type pos);
+    reference front();
+    reference back();
 };

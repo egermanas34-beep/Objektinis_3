@@ -134,3 +134,18 @@ typename Vector<T>::reference Vector<T>::at(size_type pos)//at funkcija
     }
     return elem[pos];
 }
+template <typename T>
+typename Vector<T>::reference Vector<T>::operator[](size_type pos)//operator []
+{
+    return elem[pos];
+}
+template <typename T>
+typename Vector<T>::reference Vector<T>::front()//front funkcija
+{
+    return elem[0];
+}
+template <typename T>
+typename Vector<T>::reference Vector<T>::back()//back funkcija
+{
+    return elem[sz - 1];
+}
