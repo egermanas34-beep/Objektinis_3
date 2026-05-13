@@ -214,3 +214,13 @@ typename Vector<T>::const_reverse_iterator Vector<T>::crend() const noexcept//cr
 {
     return const_reverse_iterator(cbegin());
 }
+template <typename T>
+bool Vector<T>::empty() const noexcept//empty funkcija
+{
+    return sz == 0;
+}
+template <typename T>
+typename Vector<T>::size_type Vector<T>::size() const noexcept//size funkcija
+{
+    return sz;
+}

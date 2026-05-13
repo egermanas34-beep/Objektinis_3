@@ -62,4 +62,5 @@ public:
     const_reverse_iterator crend() const noexcept;
     //capacity
     bool empty() const noexcept;
+    size_type size() const noexcept;
 };
