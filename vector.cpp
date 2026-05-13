@@ -224,3 +224,28 @@ typename Vector<T>::size_type Vector<T>::size() const noexcept//size funkcija
 {
     return sz;
 }
+template <typename T>
+typename Vector<T>::size_type Vector<T>::max_size() const noexcept//max size funkcija
+{
+    return std::allocator_traits<allocator_type>::max_size(allocator_type());
+}
+template <typename T>
+typename Vector<T>::size_type Vector<T>::capacity() const noexcept//capacity funkcija
+{
+    return cap;
+}
+template <typename T>
+void Vector<T>::reserve(size_type new_cap)//reserve funkcija
+{
+    if(new_cap > cap)
+    {
+        T* new_elem = new T[new_cap];
+        for(size_type i =0; i < sz; i++)
+        {
+            new_elem[i] = elem[i];
+        }
+        delete[] elem;
+        elem = new_elem;
+        cap = new_cap;
+    }
+}
