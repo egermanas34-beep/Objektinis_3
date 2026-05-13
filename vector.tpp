@@ -489,3 +489,37 @@ void Vector<T>::pop_back()//pop back funkcija
         --sz;
     }
 }
+template <typename T>
+void Vector<T>::resize(size_type count)//resize funkcija su vienu parametru
+{
+    if(count < sz)
+    {
+        sz = count;
+    }
+    else if(count > sz)
+    {
+        reserve(count);
+        for(size_type i = sz; i < count; i++)
+        {
+            elem[i] = T();
+        }
+        sz = count;
+    }
+}
+template <typename T>
+void Vector<T>::resize(size_type count, const value_type& value)//resize funkcija su dviem parametrais
+{
+    if(count < sz)
+    {
+        sz = count;
+    }
+    else if(count > sz)
+    {
+        reserve(count);
+        for(size_type i = sz; i < count; i++)
+        {
+            elem[i] = value;
+        }
+        sz = count;
+    }
+}

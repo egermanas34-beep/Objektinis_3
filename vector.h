@@ -88,6 +88,7 @@ public:
     template <typename R>
     constexpr void append_range(R&& rg);
     void pop_back();
-    
+    void resize(size_type count);
+    void resize(size_type count, const value_type& value);
 };
 #include "vector.tpp"
