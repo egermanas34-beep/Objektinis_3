@@ -90,5 +90,6 @@ public:
     void pop_back();
     void resize(size_type count);
     void resize(size_type count, const value_type& value);
+    constexpr void swap(Vector& other) noexcept;
 };
 #include "vector.tpp"

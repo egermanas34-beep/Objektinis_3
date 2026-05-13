@@ -523,3 +523,11 @@ void Vector<T>::resize(size_type count, const value_type& value)//resize funkcij
         sz = count;
     }
 }
+template <typename T>
+constexpr void Vector<T>::swap(Vector<T>& other) noexcept//swap funkcija
+{
+    using std::swap;
+    swap(elem, other.elem);
+    swap(sz, other.sz);
+    swap(cap, other.cap);
+}
