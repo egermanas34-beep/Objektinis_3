@@ -15,4 +15,6 @@ Buvo atlikta spartos analize tam, kad patikrinti kaip greitai veikia mano sukurt
 |-------------|------------|-------------|-------------|-------------|--------------------------|
 | std::vector | 0,00001(s) | 0,012045(s) | 0,078756(s) | 0,714367(s) | 0,312670(s)              |
 | Vector      | 0,00011(s) | 0,010462(s) | 0,065000(s) | 0,49257(s)  | 0,273827(s)              |
+
+
 Atlikus testavima, pastebeta, kad nuosava Vector realizacija veikia panasiu, kartais ir greiciau negu  std::vector.
