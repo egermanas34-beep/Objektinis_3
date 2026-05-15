@@ -48,6 +48,9 @@ compile_commands.json
 
 # Windows
 Thumbs.db
+# doxygen
+doxyman/
+Doxyfile
 # GoogleTest
 googletest/
 # GoogleTest build artifacts
