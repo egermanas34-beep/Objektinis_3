@@ -1,0 +1,277 @@
+{
+  "tests": 53,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "VectorTest",
+      "tests": 53,
+      "testsuite": [
+        {
+          "name": "DefaultConstructor",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 6
+        },
+        {
+          "name": "SizeConstructor",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 11
+        },
+        {
+          "name": "InitializerListConstructor",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 17
+        },
+        {
+          "name": "CopyConstructor",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 25
+        },
+        {
+          "name": "MoveConstructor",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 34
+        },
+        {
+          "name": "CopyAssignment",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 44
+        },
+        {
+          "name": "MoveAssignment",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 54
+        },
+        {
+          "name": "Destructor",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 65
+        },
+        {
+          "name": "Assign",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 70
+        },
+        {
+          "name": "AssignInitializerList",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 79
+        },
+        {
+          "name": "AssignRange",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 88
+        },
+        {
+          "name": "get_allocator",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 98
+        },
+        {
+          "name": "At",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 104
+        },
+        {
+          "name": "OperatorIndex",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 112
+        },
+        {
+          "name": "Front",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 120
+        },
+        {
+          "name": "Back",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 125
+        },
+        {
+          "name": "Data",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 130
+        },
+        {
+          "name": "Begin",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 138
+        },
+        {
+          "name": "End",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 148
+        },
+        {
+          "name": "CBegin",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 154
+        },
+        {
+          "name": "CEnd",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 164
+        },
+        {
+          "name": "RBegin",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 170
+        },
+        {
+          "name": "CRBegin",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 180
+        },
+        {
+          "name": "REnd",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 190
+        },
+        {
+          "name": "CREnd",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 196
+        },
+        {
+          "name": "Empty",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 202
+        },
+        {
+          "name": "Size",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 209
+        },
+        {
+          "name": "MaxSize",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 216
+        },
+        {
+          "name": "Capacity",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 221
+        },
+        {
+          "name": "Reserve",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 228
+        },
+        {
+          "name": "ShrinkToFit",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 234
+        },
+        {
+          "name": "Clear",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 241
+        },
+        {
+          "name": "Insert",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 248
+        },
+        {
+          "name": "InsertMove",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 258
+        },
+        {
+          "name": "InsertCountValue",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 269
+        },
+        {
+          "name": "InsertInitializerList",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 280
+        },
+        {
+          "name": "InsertRange",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 291
+        },
+        {
+          "name": "Emplace",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 303
+        },
+        {
+          "name": "EmplaceBack",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 311
+        },
+        {
+          "name": "Erase",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 319
+        },
+        {
+          "name": "EraseRange",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 330
+        },
+        {
+          "name": "PushBack",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 339
+        },
+        {
+          "name": "PushBackMove",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 350
+        },
+        {
+          "name": "AppendRange",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 362
+        },
+        {
+          "name": "PopBack",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 372
+        },
+        {
+          "name": "Resize",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 380
+        },
+        {
+          "name": "ResizeWithValue",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 396
+        },
+        {
+          "name": "Swap",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 412
+        },
+        {
+          "name": "NonMemberSwap",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 426
+        },
+        {
+          "name": "EraseValue",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 440
+        },
+        {
+          "name": "EraseIf",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 449
+        },
+        {
+          "name": "EqualityOperators",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 458
+        },
+        {
+          "name": "RelationalOperators",
+          "file": "D:\\objektinis\\v3.0\\tests\\vector_tests.cpp",
+          "line": 469
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+^D:\OBJEKTINIS\V3.0\BUILD-TESTS\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\D85A167EE88A2AC4BF56A76802726CB6\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/objektinis/v3.0/build-tests/_deps/googletest-subbuild -BD:/objektinis/v3.0/build-tests/_deps/googletest-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/objektinis/v3.0/build-tests/_deps/googletest-subbuild/googletest-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,5 @@
+if(EXISTS "D:/objektinis/v3.0/build/tests/VectorTest[1]_tests.cmake")
+  include("D:/objektinis/v3.0/build/tests/VectorTest[1]_tests.cmake")
+else()
+  add_test(VectorTest_NOT_BUILT VectorTest_NOT_BUILT)
+endif()

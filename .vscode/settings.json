@@ -1,0 +1,11 @@
+{
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/build-tests/_deps/googletest-src/googletest/include",
+    "${workspaceFolder}/**"
+  ],
+  "cmake.buildDirectory": "${workspaceFolder}/build-tests",
+  "cmake.configureSettings": {
+    "BUILD_TESTING": "ON"
+  },
+  "cmake.configureOnOpen": true
+}

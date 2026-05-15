@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20260515-0731-Experimental"
+	Name="(empty)"
+	Generator="ctest-4.2.0"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="Edgar"
+	OSRelease="10.0.26200"
+	OSVersion="Windows 10"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="10"
+	ModelName=""
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="12"
+	TotalVirtualMemory="18440"
+	TotalPhysicalMemory="16008"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="2100"
+	>
+	<Testing>
+		<StartDateTime>May 15 11:17 FLE vasaros / ziemos laik</StartDateTime>
+		<StartTestTime>1778833020</StartTestTime>
+		<TestList>
+			<Test>./tests/VectorTest.RelationalOperators</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>VectorTest.RelationalOperators</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/VectorTest.RelationalOperators</FullName>
+			<FullCommandLine>D:\objektinis\v3.0\build-tests\tests\Debug\VectorTest.exe "--gtest_filter=VectorTest.RelationalOperators" "--gtest_also_run_disabled_tests"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.142633</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>D:\objektinis\v3.0\build-tests\tests\Debug\VectorTest.exe "--gtest_filter=VectorTest.RelationalOperators" "--gtest_also_run_disabled_tests"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNkEFvwjAMhe/5FT7SQyMmbkgcJjFxmARTgV3aagqdqbKlNkpc+PtrWsRg0gQ+PdlfnPectUSWamiMpVECe88NzKcF777wWyzZUBwnelzUzLVDwSDXMviqqKP6iM91VaklC05h0SOw6Sawt07QwwzesRL2saczdEYsk3GrA3rTtYPKZ5cqITu7egLpd0RXZx1aK6hVnl6qhIXjnXHDHOloPVOD1LEoaXv4A1/v/PWkcsi2S+irvOt14GD1epeF0RiakDxiYUBBWIxL1GMJBY1PP/lEt/f7727gDenbf7osb8/r9cs85h5YrX4ALK2uSQ==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 15 11:17 FLE vasaros / ziemos laik</EndDateTime>
+		<EndTestTime>1778833020</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

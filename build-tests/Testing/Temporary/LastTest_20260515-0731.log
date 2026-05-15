@@ -1,0 +1,30 @@
+Start testing: May 15 11:17 FLE vasaros / ziemos laik
+----------------------------------------------------------
+53/53 Testing: VectorTest.RelationalOperators
+53/53 Test: VectorTest.RelationalOperators
+Command: "D:/objektinis/v3.0/build-tests/tests/Debug/VectorTest.exe" "--gtest_filter=VectorTest.RelationalOperators" "--gtest_also_run_disabled_tests"
+Directory: D:/objektinis/v3.0/build-tests/tests
+"VectorTest.RelationalOperators" start time: May 15 11:17 FLE vasaros / ziemos laik
+Output:
+----------------------------------------------------------
+Running main() from D:\objektinis\v3.0\googletest\googletest\src\gtest_main.cc
+Note: Google Test filter = VectorTest.RelationalOperators
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from VectorTest
+[ RUN      ] VectorTest.RelationalOperators
+[       OK ] VectorTest.RelationalOperators (0 ms)
+[----------] 1 test from VectorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"VectorTest.RelationalOperators" end time: May 15 11:17 FLE vasaros / ziemos laik
+"VectorTest.RelationalOperators" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 15 11:17 FLE vasaros / ziemos laik

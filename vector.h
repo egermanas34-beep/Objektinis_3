@@ -1,0 +1,110 @@
+#pragma once
+#include <stdio.h>
+#include <cstddef>
+#include <type_traits>
+#include <iterator>
+#include <memory>
+#include <type_traits>
+template <typename T>
+class Vector {
+public:
+//member types
+using value_type = T;
+using allocator_type = std::allocator<T>;
+using size_type = std::size_t;
+using difference_type = std::ptrdiff_t;
+using reference = value_type&;
+using const_reference = const value_type&;
+using pointer = value_type*;
+using const_pointer = const value_type*;
+using iterator = value_type*;
+using const_iterator = const value_type*;
+using reverse_iterator = std::reverse_iterator<iterator>;
+using const_reverse_iterator = std::reverse_iterator<const_iterator>;
+private:
+    T* elem;
+    size_type sz;
+    size_type cap;    
+public:
+    //constructors, destructor, assignment operators
+    Vector();//konstruktorius
+    Vector(size_type s);//konstruktorius su dydziu
+    Vector(std::initializer_list<T> init); //konstruktorius su initializer list
+    Vector(const Vector& r);//kopijavimo konstruktorius
+    Vector& operator=(const Vector& r);//kopijavimo priskyrimo operatorius
+    Vector(Vector&& r);//perkelimo(move) konstruktorius
+    Vector& operator=(Vector&& r);//perkelimo(move) priskyrimo operatorius
+    ~Vector();//destruktorius
+
+    //member functions
+    void assign (size_type count, const T& value);
+    void assign (std::initializer_list<T> ilist);
+    template <typename InputIt, typename = std::enable_if_t<!std::is_integral_v<InputIt>>>
+    void assign (InputIt first, InputIt last);
+    template< typename R>
+    constexpr void assign_range( R&& r );
+    allocator_type get_allocator() const;
+    //element access
+    reference at(size_type pos);
+    reference operator[]( size_type pos);
+    reference front();
+    reference back();
+    T* data() noexcept;
+    //iterators
+    iterator begin() noexcept;
+    const_iterator begin() const noexcept;
+    const_iterator cbegin() const noexcept;
+    iterator end() noexcept;
+    const_iterator end() const noexcept;
+    const_iterator cend() const noexcept;
+    reverse_iterator rbegin() noexcept;
+    const_reverse_iterator rbegin() const noexcept;
+    const_reverse_iterator crbegin() const noexcept;
+    reverse_iterator rend() noexcept;
+    const_reverse_iterator rend() const noexcept;
+    const_reverse_iterator crend() const noexcept;
+    //capacity
+    bool empty() const noexcept;
+    size_type size() const noexcept;
+    size_type max_size() const noexcept;
+    size_type capacity() const noexcept;
+    void reserve(size_type new_cap);
+    void shrink_to_fit();
+    //modifiers
+    void clear() noexcept;
+    iterator insert(const_iterator pos, const T& value);
+    iterator insert(const_iterator pos, T&& value);
+    iterator insert(const_iterator pos, size_type count, const T& value);
+    template <typename InputIt, typename = std::enable_if_t<!std::is_integral_v<InputIt>>>
+    
+    iterator insert(const_iterator pos, InputIt first, InputIt last);
+    iterator insert(const_iterator pos, std::initializer_list<T> ilist);
+   
+    constexpr iterator insert_range( const_iterator pos,std::initializer_list<T> ilist);
+    template <class... Args>
+    iterator emplace(const_iterator pos, Args&&... args);
+    template <typename... Args>
+    reference emplace_back(Args&&... args);
+    iterator erase(const_iterator pos);
+    iterator erase(const_iterator first, const_iterator last);
+    void push_back(const T& value);
+    void push_back(T&& value);
+    template <typename R>
+    constexpr void append_range(R&& rg);
+    void pop_back();
+    void resize(size_type count);
+    void resize(size_type count, const value_type& value);
+    constexpr void swap(Vector& other) noexcept;
+    //non-member functions
+    bool operator==(const Vector& other) const;
+    bool operator!=(const Vector& other) const;
+    bool operator<(const Vector& other) const;
+    bool operator<=(const Vector& other) const;
+    bool operator>(const Vector& other) const;
+    bool operator>=(const Vector& other) const;
+    void swap(Vector& a, Vector& b) noexcept;
+    void erase(Vector& v, const T& value);
+    template <typename Pred>
+    void erase_if(Vector v, Pred p);
+};
+#include "vector.tpp"
