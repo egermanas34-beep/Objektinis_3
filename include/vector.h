@@ -4,7 +4,7 @@
 #include <type_traits>
 #include <iterator>
 #include <memory>
-#include <type_traits>
+
 template <typename T>
 class Vector {
 public:
@@ -39,7 +39,7 @@ public:
     //member functions
     void assign (size_type count, const T& value);
     void assign (std::initializer_list<T> ilist);
-    template <typename InputIt, typename = std::enable_if_t<!std::is_integral_v<InputIt>>>
+    template <typename InputIt, typename = std::enable_if_t<!std::is_integral<InputIt>::value>>
     void assign (InputIt first, InputIt last);
     template< typename R>
     constexpr void assign_range( R&& r );
@@ -75,8 +75,7 @@ public:
     iterator insert(const_iterator pos, const T& value);
     iterator insert(const_iterator pos, T&& value);
     iterator insert(const_iterator pos, size_type count, const T& value);
-    template <typename InputIt, typename = std::enable_if_t<!std::is_integral_v<InputIt>>>
-    
+    template <typename InputIt, typename = std::enable_if_t<!std::is_integral<InputIt>::value>>
     iterator insert(const_iterator pos, InputIt first, InputIt last);
     iterator insert(const_iterator pos, std::initializer_list<T> ilist);
    

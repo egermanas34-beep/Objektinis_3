@@ -18,3 +18,4 @@ void studentoLygis(StudentuGrupe &grupe, StudentuGrupe &vargsiukai, StudentuGrup
 void tyrimasFailoKurimas();
 void tyrimasVisasProcesas();
 void tyrimasKlasesMetodams();
+void tyrimasVektoriu();

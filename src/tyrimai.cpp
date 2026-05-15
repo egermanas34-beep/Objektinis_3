@@ -1,5 +1,30 @@
 #include "funkcijos.h"
 
+void tyrimasVektoriu()
+{
+    vector<int> v1;
+    size_t perskristimu_skaicius1 = 0;
+    for(int i = 0; i < 100000000; i++)
+    {
+        if(v1.capacity() == v1.size())
+        {
+            perskristimu_skaicius1++;
+        }
+        v1.push_back(i);
+    }
+    cout << "Perskristimų skaičius std::vector: " << perskristimu_skaicius1 << endl;
+    Vector<int> v2;
+    size_t perskristimu_skaicius2 = 0;
+    for(int i = 0; i < 100000000; i++)
+    {
+        if(v2.capacity() == v2.size())
+        {
+            perskristimu_skaicius2++;
+        }
+        v2.push_back(i);
+    }
+    cout << "Perskristimų skaičius custom Vector: " << perskristimu_skaicius2 << endl;
+}
 void tyrimasKlasesMetodams()
 {
      Studentas s1;
@@ -53,6 +78,7 @@ void tyrimasKlasesMetodams()
    // std::cout << "Vardas: " << z1.getVardas() << ", Pavardė: " << z1.getPavarde() << "\n";
   
 }
+
 
 void tyrimasFailoKurimas() {
     vector<int> dydziai = {100000, 1000000}; 
