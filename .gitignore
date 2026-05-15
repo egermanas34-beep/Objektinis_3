@@ -47,7 +47,8 @@ compile_commands.json
 
 # Windows
 Thumbs.db
-
+# GoogleTest
+googletest/
 # GoogleTest build artifacts
 googletest/build/
 
