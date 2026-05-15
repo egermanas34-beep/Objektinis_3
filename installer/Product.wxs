@@ -1,11 +1,13 @@
-<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
 
   <Package
     Name="StudentuSistema"
     Manufacturer="Edgaras Germanas"
     Version="1.0.0.0"
     UpgradeCode="11111111-1111-1111-1111-111111111111">
-
+    <ui:WixUI Id="WixUI_InstallDir" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
     <MajorUpgrade DowngradeErrorMessage="Naujesne versija jau idiegta." />
     <MediaTemplate />
 

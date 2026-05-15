@@ -71,3 +71,18 @@ Buvo palyginta kiek laiko uztrunka programos veikimas naudojant std::vector ir V
 | std::vector | 0,6747(s) | 7,01541(s) | 76,6582(s) |
 
 Po sio testo matome, kad Vector realizacija yra labai panasi, o kai kuriais atvejais net pralenkia std::vector spartos atveju.
+
+## Programos diegimas ir paleidimas
+
+Projektui sukurtas diegimo failas setum.msi, kuris automatiskai idiegie programa i ' C:\Program Files\VU\Edgaras-Germanas' 
+Diegimo metu taip pat ikeliami ir testavimo failai: studentai_10000.txt ir studentai_100000.txt.
+### Diegimo instrukcija
+Paleisti setum.msi
+Paspausti Next
+Tada galite pasirinkti diegimo kelia, arba palikti pagal nutylejima
+Paspausti Install
+Baigti deigima su finish.
+### Programos paleidimas
+Idiegus, sia programa bus galima paleisti tiesiogiai is darbastalio, naudojant Start Menu shortcuta arba paleidziant StudentuSistema.exe is diegimo aplanko.
+#### Testavimo failai
+programoje galima naudoti pateiktus testavimo failus: studentai_10000.txt ir studentai_100000.txt. Sie failai automatiskai idiegiami kartu su programa.
