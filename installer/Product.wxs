@@ -9,7 +9,7 @@
     <ui:WixUI Id="WixUI_InstallDir" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
     <MajorUpgrade DowngradeErrorMessage="Naujesne versija jau idiegta." />
-    <MediaTemplate />
+    <MediaTemplate EmbedCab="yes"/>
 
     <Feature Id="MainFeature" Title="StudentuSistema" Level="1">
       <ComponentGroupRef Id="AppComponents" />
