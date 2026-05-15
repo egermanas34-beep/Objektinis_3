@@ -35,6 +35,7 @@ compile_commands.json
 *.dll
 *.a
 *.lib
+*.txt
 # Visual Studio Code
 .vscode/
 # Logs

@@ -1,7 +1,7 @@
 
 #pragma once
 #include "bibliotekos.h"
-
+#include "vector.h"
 int skaiciu_mastelis(const string &prompt, int min_val, int max_val);
 string vardo_skaitymas(const string &prompt);
 
@@ -93,7 +93,8 @@ void whoAmI() const { std::cout << "Aš esu " << getVardas() << " iš Studentas 
 
 
 //! sukurti alias StudentuGrupe, kuri galima nuadoti kaip vektoriu, lista arba deque tipo konteineri, tam, kad patikrinti programos sparta, su skirtingo tipo konteineriais.
-using StudentuGrupe = std::vector<Studentas>;  // vector
+//using StudentuGrupe = std::vector<Studentas>;  // vector
+using StudentuGrupe = Vector<Studentas>;  // custom vector
 //using StudentuGrupe = std::list<Studentas>;      // list
 //using StudentuGrupe = std::deque<Studentas>;   // deque
 const int Maxpazymiu=20;
