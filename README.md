@@ -60,3 +60,14 @@ Buvo atlikta spartos analize tam, kad patikrinti kaip greitai veikia mano sukurt
 
 
 Atlikus testavima, pastebeta, kad nuosava Vector realizacija veikia panasiu, kartais ir greiciau negu  std::vector.
+## Atminties perskirstymai
+Buvo patikrinta, kiek atminties perskirstymu atliks tiek std::vector tiek nuosavas Vector uzpildant juos 100000000 elementu. Atlikus si bandyma(funkcijos realizacija galima rasti tyrimai.cpp faile tyrimasVektoriu()) buvo pastebeta, kad tiek std::vector tiek Vector atliko perskirstymu vienoda kieki kartu - 28.
+## Programos testavimas
+Buvo atliktas tyrimas, atlikita spartos analize - naudojant duomenu failus su 100 000, 1 000 000 ir 10 000 000 studentu irasu. palyginkite kiek laiko užtrunka programos veikimas naudojant std::vector ir Vector realizacijas (matuokite visas std::vector ir Vector operacijas ir visur turi būti naudojamas tas pats konteineris).
+Buvo palyginta kiek laiko uztrunka programos veikimas naudojant std::vector ir Vector. Zemiau esancioje lenteleje galite matyti rezultatus, virsutineje eiluteje pavaizduoti kokio dydzio failai buvo naudoti, o po jais gautas visas programos veikimo laikas naudojant Vector arba std::vector.
+|             | 100.000   | 1.000.000  | 10.000.000 |
+|-------------|-----------|------------|------------|
+| Vector      | 0,6659(s) | 6,89632(s) | 77,4212(s) |
+| std::vector | 0,6747(s) | 7,01541(s) | 76,6582(s) |
+
+Po sio testo matome, kad Vector realizacija yra labai panasi, o kai kuriais atvejais net pralenkia std::vector spartos atveju.

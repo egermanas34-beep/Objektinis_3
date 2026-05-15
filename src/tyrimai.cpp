@@ -78,8 +78,6 @@ void tyrimasKlasesMetodams()
    // std::cout << "Vardas: " << z1.getVardas() << ", Pavardė: " << z1.getPavarde() << "\n";
   
 }
-
-
 void tyrimasFailoKurimas() {
     vector<int> dydziai = {100000, 1000000}; 
 
@@ -96,7 +94,7 @@ void tyrimasFailoKurimas() {
     }
 }
 void tyrimasVisasProcesas() {
-   vector<int> dydziai = { 100000, 1000000}; 
+   vector<int> dydziai = { 100000, 1000000, 10000000}; 
 
     for (int n : dydziai) 
     {
