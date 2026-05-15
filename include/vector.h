@@ -9,7 +9,7 @@ template <typename T>
 class Vector {
 public:
 //member types
-using value_type = T;
+using value_type = T; 
 using allocator_type = std::allocator<T>;
 using size_type = std::size_t;
 using difference_type = std::ptrdiff_t;
@@ -26,17 +26,17 @@ private:
     size_type sz;
     size_type cap;    
 public:
-    //constructors, destructor, assignment operators
-    Vector();//konstruktorius
-    Vector(size_type s);//konstruktorius su dydziu
-    Vector(std::initializer_list<T> init); //konstruktorius su initializer list
-    Vector(const Vector& r);//kopijavimo konstruktorius
-    Vector& operator=(const Vector& r);//kopijavimo priskyrimo operatorius
-    Vector(Vector&& r);//perkelimo(move) konstruktorius
-    Vector& operator=(Vector&& r);//perkelimo(move) priskyrimo operatorius
-    ~Vector();//destruktorius
+    //! constructors, destructor, assignment operators
+    Vector();//! konstruktorius
+    Vector(size_type s);//! konstruktorius su dydziu
+    Vector(std::initializer_list<T> init); //! konstruktorius su initializer list
+    Vector(const Vector& r);//! kopijavimo konstruktorius
+    Vector& operator=(const Vector& r);//! kopijavimo priskyrimo operatorius
+    Vector(Vector&& r);//! perkelimo(move) konstruktorius
+    Vector& operator=(Vector&& r);//! perkelimo(move) priskyrimo operatorius
+    ~Vector();//! destruktorius
 
-    //member functions
+    //! member functions
     void assign (size_type count, const T& value);
     void assign (std::initializer_list<T> ilist);
     template <typename InputIt, typename = std::enable_if_t<!std::is_integral<InputIt>::value>>
@@ -44,13 +44,13 @@ public:
     template< typename R>
     constexpr void assign_range( R&& r );
     allocator_type get_allocator() const;
-    //element access
+    //! element access
     reference at(size_type pos);
     reference operator[]( size_type pos);
     reference front();
     reference back();
     T* data() noexcept;
-    //iterators
+    //! iterators
     iterator begin() noexcept;
     const_iterator begin() const noexcept;
     const_iterator cbegin() const noexcept;
@@ -63,14 +63,14 @@ public:
     reverse_iterator rend() noexcept;
     const_reverse_iterator rend() const noexcept;
     const_reverse_iterator crend() const noexcept;
-    //capacity
+    //! capacity
     bool empty() const noexcept;
     size_type size() const noexcept;
     size_type max_size() const noexcept;
     size_type capacity() const noexcept;
     void reserve(size_type new_cap);
     void shrink_to_fit();
-    //modifiers
+    //! modifiers
     void clear() noexcept;
     iterator insert(const_iterator pos, const T& value);
     iterator insert(const_iterator pos, T&& value);
@@ -94,7 +94,7 @@ public:
     void resize(size_type count);
     void resize(size_type count, const value_type& value);
     constexpr void swap(Vector& other) noexcept;
-    //non-member functions
+    //! non-member functions
     bool operator==(const Vector& other) const;
     bool operator!=(const Vector& other) const;
     bool operator<(const Vector& other) const;

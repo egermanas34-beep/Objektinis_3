@@ -1,21 +1,21 @@
 #include "vector.h"
 
 template <typename T>
-Vector<T>::Vector() //defaultinis konstruktorius
+Vector<T>::Vector() //! defaultinis konstruktorius
 {
     elem = nullptr;
     sz = 0;
     cap = 0;
 }
 template <typename T>
-Vector<T>::Vector(size_type s)//konstruktorius su dydziu
+Vector<T>::Vector(size_type s)//!konstruktorius su dydziu
 {
     elem = new T[s];
     sz = s;
     cap = s;
 }
 template <typename T>
-Vector<T>::Vector(std::initializer_list<T> init)//konstruktorius su initializer list
+Vector<T>::Vector(std::initializer_list<T> init)//!konstruktorius su initializer list
 {
     sz = init.size();
     cap = init.size();
@@ -33,7 +33,7 @@ Vector<T>::~Vector()//destruktorius
     cap = 0;
 }
 template <typename T>
-Vector<T>::Vector(const Vector& r)//kopijavimo konstruktorius
+Vector<T>::Vector(const Vector& r)//!kopijavimo konstruktorius
 {
     elem = new T[r.cap];
     sz = r.sz;
@@ -43,7 +43,7 @@ Vector<T>::Vector(const Vector& r)//kopijavimo konstruktorius
     }
 }
 template <typename T>
-Vector<T>::Vector(Vector&& r) //perkelimo(move) konstruktorius
+Vector<T>::Vector(Vector&& r) //!perkelimo(move) konstruktorius
 {
     elem = r.elem;
     sz = r.sz;
@@ -53,7 +53,7 @@ Vector<T>::Vector(Vector&& r) //perkelimo(move) konstruktorius
     r.cap = 0;
 }
 template <typename T>
-Vector<T>& Vector<T>::operator=(const Vector& r) //kopijavimo priskyrimo operatorius
+Vector<T>& Vector<T>::operator=(const Vector& r) //!kopijavimo priskyrimo operatorius
 {
     if(this == &r)
         return *this;
@@ -68,7 +68,7 @@ Vector<T>& Vector<T>::operator=(const Vector& r) //kopijavimo priskyrimo operato
     return *this;
 }
 template <typename T>
-Vector<T>& Vector<T>::operator=(Vector&& r)//move priskyrimo operatorius
+Vector<T>& Vector<T>::operator=(Vector&& r)//!move priskyrimo operatorius
 {
     if(this ==&r)
     return *this;
@@ -84,7 +84,7 @@ Vector<T>& Vector<T>::operator=(Vector&& r)//move priskyrimo operatorius
 
 }
 template <typename T>
-void Vector<T>::assign(size_type count, const T& value)//assign funkcija su dviem parametrais
+void Vector<T>::assign(size_type count, const T& value)//!assign funkcija su dviem parametrais
 {
     delete[] elem;
     elem = new T[count];
@@ -95,12 +95,12 @@ void Vector<T>::assign(size_type count, const T& value)//assign funkcija su dvie
     }
 }
 template <typename T>
-void Vector<T>::assign(std::initializer_list<T> ilist)//assign funkcija su initializer list
+void Vector<T>::assign(std::initializer_list<T> ilist)//!assign funkcija su initializer list
 {
     delete[] elem;
     sz = ilist.size();
     cap = ilist.size();
-    elem = (cap == 0 ) ? nullptr : new T[cap];//jei cap yra 0, tai elem bus nullptr, kitaip bus sukuriamas naujas masyvas
+    elem = (cap == 0 ) ? nullptr : new T[cap];//!jei cap yra 0, tai elem bus nullptr, kitaip bus sukuriamas naujas masyvas
     size_type i = 0;
     for(const auto& value : ilist){
         elem[i++] = value;
@@ -108,7 +108,7 @@ void Vector<T>::assign(std::initializer_list<T> ilist)//assign funkcija su initi
 }
 template <typename T>
 template <typename InputIt, typename>
-void Vector<T>::assign(InputIt first, InputIt last)//assign funkcija su iteratoriais(range)
+void Vector<T>::assign(InputIt first, InputIt last)//!assign funkcija su iteratoriais(range)
 {
     delete[] elem;
     sz = static_cast<size_type>(std::distance(first, last));
@@ -121,7 +121,7 @@ void Vector<T>::assign(InputIt first, InputIt last)//assign funkcija su iterator
 }
 template <typename T>
 template <typename R>
-constexpr void Vector<T>::assign_range(R&& r)//assign funkcija su range
+constexpr void Vector<T>::assign_range(R&& r)//!assign funkcija su range
 {
     delete[] elem;
     sz = static_cast<size_type>(std::distance(std::begin(r), std::end(r)));
@@ -133,12 +133,12 @@ constexpr void Vector<T>::assign_range(R&& r)//assign funkcija su range
     }
 }
 template <typename T>
-typename Vector<T>::allocator_type Vector<T>::get_allocator() const//get allocator funkcija
+typename Vector<T>::allocator_type Vector<T>::get_allocator() const//!get allocator funkcija
 {
     return allocator_type();
 }
 template <typename T>
-typename Vector<T>::reference Vector<T>::at(size_type pos)//at funkcija
+typename Vector<T>::reference Vector<T>::at(size_type pos)//!at funkcija
 {
     if((pos < 0) || (pos >= sz)){
         throw std::out_of_range("Index out of range");
@@ -146,27 +146,27 @@ typename Vector<T>::reference Vector<T>::at(size_type pos)//at funkcija
     return elem[pos];
 }
 template <typename T>
-typename Vector<T>::reference Vector<T>::operator[](size_type pos)//operator []
+typename Vector<T>::reference Vector<T>::operator[](size_type pos)//!operator []
 {
     return elem[pos];
 }
 template <typename T>
-typename Vector<T>::reference Vector<T>::front()//front funkcija
+typename Vector<T>::reference Vector<T>::front()//!front funkcija
 {
     return elem[0];
 }
 template <typename T>
-typename Vector<T>::reference Vector<T>::back()//back funkcija
+typename Vector<T>::reference Vector<T>::back()//!back funkcija
 {
     return elem[sz - 1];
 }
 template <typename T>
-T* Vector<T>::data() noexcept//data funkcija
+T* Vector<T>::data() noexcept//!data funkcija
 {
     return elem;
 }
 template <typename T>
-typename Vector<T>::iterator Vector<T>::begin() noexcept//begin funkcija
+typename Vector<T>::iterator Vector<T>::begin() noexcept//!begin funkcija
 {
     return elem;
 }
@@ -176,77 +176,77 @@ typename Vector<T>::const_iterator Vector<T>::begin() const noexcept//const begi
     return elem;
 }
 template <typename T>
-typename Vector<T>::const_iterator Vector<T>::cbegin() const noexcept//cbegin funkcija
+typename Vector<T>::const_iterator Vector<T>::cbegin() const noexcept//!cbegin funkcija
 {
     return elem;
 }
 template <typename T>
-typename Vector<T>::iterator Vector<T>::end() noexcept//end funkcija
+typename Vector<T>::iterator Vector<T>::end() noexcept//!end funkcija
 {
     return elem + sz;
 }
 template <typename T>
-typename Vector<T>::const_iterator Vector<T>::end() const noexcept//const end funkcija
+typename Vector<T>::const_iterator Vector<T>::end() const noexcept//!const end funkcija
 {
     return elem + sz;
 }
 template <typename T>
-typename Vector<T>::const_iterator Vector<T>::cend() const noexcept//cend funkcija
+typename Vector<T>::const_iterator Vector<T>::cend() const noexcept//!cend funkcija
 {
     return elem + sz;
 }
 template <typename T>
-typename Vector<T>::reverse_iterator Vector<T>::rbegin() noexcept//rbegin funkcija
+typename Vector<T>::reverse_iterator Vector<T>::rbegin() noexcept//! rbegin funkcija
 {
     return reverse_iterator(end());
 }
 template <typename T>
-typename Vector<T>::const_reverse_iterator Vector<T>::rbegin() const noexcept//const rbegin funkcija
+typename Vector<T>::const_reverse_iterator Vector<T>::rbegin() const noexcept//! const rbegin funkcija
 {
     return const_reverse_iterator(end());
 }
 template <typename T>
-typename Vector<T>::const_reverse_iterator Vector<T>::crbegin() const noexcept//crbegin funkcija
+typename Vector<T>::const_reverse_iterator Vector<T>::crbegin() const noexcept//! crbegin funkcija
 {
     return const_reverse_iterator(cend());
 }
 template <typename T>
-typename Vector<T>::reverse_iterator Vector<T>::rend() noexcept//rend funkcija
+typename Vector<T>::reverse_iterator Vector<T>::rend() noexcept//! rend funkcija
 {
     return reverse_iterator(begin());
 }
 template <typename T>
-typename Vector<T>::const_reverse_iterator Vector<T>::rend() const noexcept//const rend funkcija
+typename Vector<T>::const_reverse_iterator Vector<T>::rend() const noexcept//! const rend funkcija
 {
     return const_reverse_iterator(begin());
 }
 template <typename T>
-typename Vector<T>::const_reverse_iterator Vector<T>::crend() const noexcept//crend funkcija
+typename Vector<T>::const_reverse_iterator Vector<T>::crend() const noexcept//! crend funkcija
 {
     return const_reverse_iterator(cbegin());
 }
 template <typename T>
-bool Vector<T>::empty() const noexcept//empty funkcija
+bool Vector<T>::empty() const noexcept//!empty funkcija
 {
     return sz == 0;
 }
 template <typename T>
-typename Vector<T>::size_type Vector<T>::size() const noexcept//size funkcija
+typename Vector<T>::size_type Vector<T>::size() const noexcept//!size funkcija
 {
     return sz;
 }
 template <typename T>
-typename Vector<T>::size_type Vector<T>::max_size() const noexcept//max size funkcija
+typename Vector<T>::size_type Vector<T>::max_size() const noexcept//! max size funkcija
 {
     return std::allocator_traits<allocator_type>::max_size(allocator_type());
 }
 template <typename T>
-typename Vector<T>::size_type Vector<T>::capacity() const noexcept//capacity funkcija
+typename Vector<T>::size_type Vector<T>::capacity() const noexcept//! capacity funkcija
 {
     return cap;
 }
 template <typename T>
-void Vector<T>::reserve(size_type new_cap)//reserve funkcija
+void Vector<T>::reserve(size_type new_cap)//! reserve funkcija
 {
     if(new_cap > cap)
     {
@@ -261,7 +261,7 @@ void Vector<T>::reserve(size_type new_cap)//reserve funkcija
     }
 }
 template <typename T>
-void Vector<T>::shrink_to_fit()//shrink to fit funkcija
+void Vector<T>::shrink_to_fit()//! shrink to fit funkcija
 {
     if(sz < cap)
     {
@@ -276,12 +276,12 @@ void Vector<T>::shrink_to_fit()//shrink to fit funkcija
     }
 }
 template <typename T>
-void Vector<T>::clear() noexcept//clear funkcija
+void Vector<T>::clear() noexcept//! clear funkcija
 {
     sz = 0;  
 }
 template <typename T>
-typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, const T& value)//insert funkcija su const T& value
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, const T& value)//! insert funkcija su const T& value
 {
     size_type index = pos - begin();
     if(sz >= cap)
@@ -297,7 +297,7 @@ typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, const T& valu
     return begin() + index;
 }
 template <typename T>
-typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, T&& value)//insert funkcija su T&& value
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, T&& value)//! insert funkcija su T&& value
 {
     size_type index = pos - begin();
     if(sz >= cap)
@@ -313,7 +313,7 @@ typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, T&& value)//i
     return begin() + index;
 }
 template <typename T>
-typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, size_type count, const T& value)//insert funkcija su count ir value
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, size_type count, const T& value)//! insert funkcija su count ir value
 {
     size_type index = pos - begin();
     if(sz + count > cap)
@@ -333,7 +333,7 @@ typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, size_type cou
 }
 template <typename T>
 template <typename InputIt, typename>
-typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, InputIt first, InputIt last)//insert funkcija su iteratoriais
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, InputIt first, InputIt last)//! insert funkcija su iteratoriais
 {
     size_type index = pos - begin();
     size_type count = static_cast<size_type>(std::distance(first, last));
@@ -355,7 +355,7 @@ typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, InputIt first
     return begin() + index;
 }
 template <typename T>
-typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, std::initializer_list<T> ilist)//insert funkcija su initializer list
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, std::initializer_list<T> ilist)//! insert funkcija su initializer list
 {
     size_type index = pos - begin();
     size_type count = ilist.size();
@@ -377,7 +377,7 @@ typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, std::initiali
     return begin() + index;
 }
 template <typename T>
-constexpr typename Vector<T>::iterator Vector<T>::insert_range(const_iterator pos, std::initializer_list<T> ilist)
+constexpr typename Vector<T>::iterator Vector<T>::insert_range(const_iterator pos, std::initializer_list<T> ilist)//! insert range funkcija su initializer list
 {
     size_type index = pos - begin();
     size_type count = ilist.size();
@@ -400,7 +400,7 @@ constexpr typename Vector<T>::iterator Vector<T>::insert_range(const_iterator po
 }
 template <typename T>
 template <class... Args>
-typename Vector<T>::iterator Vector<T>::emplace(const_iterator pos, Args&&... args)//emplace funkcija
+typename Vector<T>::iterator Vector<T>::emplace(const_iterator pos, Args&&... args)//! emplace funkcija
 {
     size_type index = pos - begin();
     if(sz >= cap)
@@ -417,7 +417,7 @@ typename Vector<T>::iterator Vector<T>::emplace(const_iterator pos, Args&&... ar
 }
 template <typename T>
 template <typename... Args>
-typename Vector<T>::reference Vector<T>::emplace_back(Args&&... args)//emplace back funkcija
+typename Vector<T>::reference Vector<T>::emplace_back(Args&&... args)//! emplace back funkcija
 {
     if(sz >= cap)
     {
@@ -428,7 +428,7 @@ typename Vector<T>::reference Vector<T>::emplace_back(Args&&... args)//emplace b
     return elem[sz - 1];
 }
 template <typename T>
-typename Vector<T>::iterator Vector<T>::erase(const_iterator pos)//erase funkcija su vienu iteratoriumi
+typename Vector<T>::iterator Vector<T>::erase(const_iterator pos)//! erase funkcija su vienu iteratoriumi
 {
     size_type index = pos - begin();
     for(size_type i = index; i < sz - 1; i++)
@@ -439,7 +439,7 @@ typename Vector<T>::iterator Vector<T>::erase(const_iterator pos)//erase funkcij
     return begin() + index;
 }
 template <typename T>
-typename Vector<T>::iterator Vector<T>::erase(const_iterator first, const_iterator last)//erase funkcija intervalui
+typename Vector<T>::iterator Vector<T>::erase(const_iterator first, const_iterator last)//! erase funkcija intervalui
 {
     size_type index = first - begin();
     size_type count = last - first;
@@ -451,7 +451,7 @@ typename Vector<T>::iterator Vector<T>::erase(const_iterator first, const_iterat
     return begin() + index;
 }
 template <typename T>
-void Vector<T>::push_back(const T& value)//push back funkcija su const T& value
+void Vector<T>::push_back(const T& value)//! push back funkcija su const T& value
 {
     if(sz >= cap)
     {
@@ -461,7 +461,7 @@ void Vector<T>::push_back(const T& value)//push back funkcija su const T& value
     ++sz;
 }
 template <typename T>
-void Vector<T>::push_back(T&& value)//push back funkcija su T&& value
+void Vector<T>::push_back(T&& value)//! push back funkcija su T&& value
 {
     if(sz >= cap)
     {
@@ -472,7 +472,7 @@ void Vector<T>::push_back(T&& value)//push back funkcija su T&& value
 }
 template <typename T>
 template <typename R>
-constexpr void Vector<T>::append_range(R&& rg)//append range funkcija
+constexpr void Vector<T>::append_range(R&& rg)//! append range funkcija
 {
     
     for(auto&& value : rg)
@@ -481,7 +481,7 @@ constexpr void Vector<T>::append_range(R&& rg)//append range funkcija
     }
 }
 template <typename T>
-void Vector<T>::pop_back()//pop back funkcija
+void Vector<T>::pop_back()//! pop back funkcija
 {
     if(sz > 0)
     {
@@ -489,7 +489,7 @@ void Vector<T>::pop_back()//pop back funkcija
     }
 }
 template <typename T>
-void Vector<T>::resize(size_type count)//resize funkcija su vienu parametru
+void Vector<T>::resize(size_type count)//! resize funkcija su vienu parametru
 {
     if(count < sz)
     {
@@ -506,7 +506,7 @@ void Vector<T>::resize(size_type count)//resize funkcija su vienu parametru
     }
 }
 template <typename T>
-void Vector<T>::resize(size_type count, const value_type& value)//resize funkcija su dviem parametrais
+void Vector<T>::resize(size_type count, const value_type& value)//! resize funkcija su dviem parametrais
 {
     if(count < sz)
     {
@@ -523,14 +523,14 @@ void Vector<T>::resize(size_type count, const value_type& value)//resize funkcij
     }
 }
 template <typename T>
-constexpr void Vector<T>::swap(Vector<T>& other) noexcept//swap funkcija
+constexpr void Vector<T>::swap(Vector<T>& other) noexcept//! swap funkcija
 {
     std::swap(elem, other.elem);
     std::swap(sz, other.sz);
     std::swap(cap, other.cap);
 }
 template <typename T>
-bool Vector<T>::operator==(const Vector& other) const//operator ==
+bool Vector<T>::operator==(const Vector& other) const//! operator ==
 {
     if(sz != other.sz)
     {
@@ -546,12 +546,12 @@ bool Vector<T>::operator==(const Vector& other) const//operator ==
     return true;
 }
 template <typename T>
-bool Vector<T>::operator!=(const Vector& other) const//operator !=
+bool Vector<T>::operator!=(const Vector& other) const//! operator !=
 {
     return !(*this == other);
 }
 template <typename T>
-bool Vector<T>::operator<(const Vector& other) const//operator <
+bool Vector<T>::operator<(const Vector& other) const//! operator <
 {
     size_type min_size = std::min(sz, other.sz);
     for(size_type i = 0; i < min_size; i++)
@@ -568,27 +568,27 @@ bool Vector<T>::operator<(const Vector& other) const//operator <
     return sz < other.sz;   
 }
 template <typename T>
-bool Vector<T>::operator>(const Vector& other) const//operator >
+bool Vector<T>::operator>(const Vector& other) const//! operator >
 {
     return other < *this;
 }
 template <typename T>
-bool Vector<T>::operator<=(const Vector& other) const//operator <=
+bool Vector<T>::operator<=(const Vector& other) const//! operator <=
 {
     return !(other < *this);
 }
 template <typename T>
-bool Vector<T>::operator>=(const Vector& other) const//operator >=
+bool Vector<T>::operator>=(const Vector& other) const//! operator >=
 {
     return !(*this < other);
 }
 template <typename T>
-void swap(Vector<T>& a, Vector<T>& b) noexcept//swap funkcija friend
+void swap(Vector<T>& a, Vector<T>& b) noexcept//! swap funkcija friend
 {
     a.swap(b);
 }
 template <typename T>
-void erase(Vector<T>& v, const T& value)//erase funkcija su verte
+void erase(Vector<T>& v, const T& value)//! erase funkcija su verte
 {
     for(typename Vector<T>::size_type i = 0; i < v.size(); i++)
     {
@@ -600,7 +600,7 @@ void erase(Vector<T>& v, const T& value)//erase funkcija su verte
     }
 }
 template <typename T, typename Pred>
-void erase_if(Vector<T>& v, Pred p)//erase if funkcija
+void erase_if(Vector<T>& v, Pred p)//! erase if funkcija
 {
     typename Vector<T>::size_type i = 0;
     while(i < v.size())
