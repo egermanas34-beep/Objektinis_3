@@ -5,7 +5,7 @@ set(SOURCES
 add_executable(VectorTest ${SOURCES})
 
 target_include_directories(VectorTest PRIVATE
-    ${CMAKE_SOURCE_DIR}
+    ../include
 )
 
 target_link_libraries(VectorTest PRIVATE

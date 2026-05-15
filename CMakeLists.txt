@@ -6,8 +6,16 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Main executable
-add_executable(StudentuSistema main.cpp)
-target_include_directories(StudentuSistema PRIVATE ${CMAKE_SOURCE_DIR})
+add_executable(StudentuSistema 
+    src/main.cpp
+    src/studentas.cpp
+    src/papildomos_funkcijos.cpp
+    src/tyrimai.cpp
+    src/generavimas.cpp
+    src/ived_isved.cpp
+    
+    )
+target_include_directories(StudentuSistema PRIVATE include)
 
 # Testing support
 enable_testing()
