@@ -1,5 +1,8 @@
 
 #include "funkcijos.h" 
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
 #include <windows.h>// Įtraukiame Windows.h biblioteką, kad galėtume naudoti funkcijas, susijusias su konsolės kodavimo nustatymais
 
 
@@ -51,13 +54,16 @@ system("powershell ls studentai*.txt");
     }
    
 
-int rus = skaiciu_mastelis("Pasirinkite studentu skirstymo strategija (1, 2 arba 3): ", 1, 3);
+    int rus = skaiciu_mastelis("Pasirinkite studentu skirstymo strategija (1, 2 arba 3): ", 1, 3);
 
     
     rikiavimas(grupe, rik);
     studentoLygis(grupe, vargsiukai, smartukai, rus);
    outputas(vargsiukai, smartukai, pasirinkimas, isvedimas, m);
    
+   std::cout << "\nSpauskite Enter, kad uzdarytumete programa...\n";
+    std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
+    std::cin.get();
     return 0;
 }
 

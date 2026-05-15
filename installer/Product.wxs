@@ -1,0 +1,66 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <Package
+    Name="StudentuSistema"
+    Manufacturer="Edgaras Germanas"
+    Version="1.0.0.0"
+    UpgradeCode="11111111-1111-1111-1111-111111111111">
+
+    <MajorUpgrade DowngradeErrorMessage="Naujesne versija jau idiegta." />
+    <MediaTemplate />
+
+    <Feature Id="MainFeature" Title="StudentuSistema" Level="1">
+      <ComponentGroupRef Id="AppComponents" />
+    </Feature>
+  </Package>
+
+  <Fragment>
+    <StandardDirectory Id="ProgramFilesFolder">
+      <Directory Id="VU" Name="VU">
+        <Directory Id="INSTALLFOLDER" Name="Edgaras-Germanas" />
+      </Directory>
+    </StandardDirectory>
+
+    <StandardDirectory Id="DesktopFolder" />
+
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ProgramMenuVU" Name="VU">
+        <Directory Id="ProgramMenuApp" Name="Edgaras-Germanas" />
+      </Directory>
+    </StandardDirectory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="AppComponents" Directory="INSTALLFOLDER">
+
+      <Component Guid="*">
+
+        <File Id="MainExe"
+              Source="StudentuSistema.exe"
+              KeyPath="yes" />
+
+        <Shortcut Id="DesktopShortcut"
+                  Directory="DesktopFolder"
+                  Name="StudentuSistema"
+                  Target="[INSTALLFOLDER]StudentuSistema.exe" 
+                  WorkingDirectory="INSTALLFOLDER" />
+
+        <Shortcut Id="StartMenuShortcut"
+                  Directory="ProgramMenuApp"
+                  Name="StudentuSistema"
+                  Target="[INSTALLFOLDER]StudentuSistema.exe" 
+                  WorkingDirectory="INSTALLFOLDER" />
+      </Component>
+
+      <Component Guid="*">
+        <File Source="studentai_10000.txt" KeyPath="yes" />
+      </Component>
+
+      <Component Guid="*">
+        <File Source="studentai_100000.txt" KeyPath="yes" />
+      </Component>
+
+    </ComponentGroup>
+  </Fragment>
+
+</Wix>
