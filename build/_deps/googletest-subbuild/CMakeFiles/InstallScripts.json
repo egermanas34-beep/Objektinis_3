@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"D:/objektinis/v3.0/build/_deps/googletest-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
