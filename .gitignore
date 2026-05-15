@@ -12,10 +12,10 @@
 *.env
 
 # Build folders
-/build/
-/build-tests/
-/cmake-build-debug/
-/cmake-build-release/
+build/
+build-tests/
+cmake-build-debug/
+cmake-build-release/
 # CMake
 CMakeCache.txt
 CMakeFiles/
