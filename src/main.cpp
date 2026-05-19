@@ -34,9 +34,15 @@ system("powershell ls studentai*.txt");
    {int n =skaiciu_mastelis("Kiek yra studentų? ", 1, 100000);
     failuGeneravimas( n); return 0;}
     if(veiksmas==7) {tyrimasFailoKurimas(); return 0;}
-    if(veiksmas==8) {tyrimasVisasProcesas(); return 0;}
-    if(veiksmas==9) {tyrimasKlasesMetodams(); return 0;}
-    if(veiksmas==10) {tyrimasVektoriu(); return 0;}
+    if(veiksmas==8) {tyrimasVisasProcesas();  std::cout << "\nSpauskite Enter, kad uzdarytumete programa...\n";
+    std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
+    std::cin.get(); return 0;}
+    if(veiksmas==9) {tyrimasKlasesMetodams();  std::cout << "\nSpauskite Enter, kad uzdarytumete programa...\n";
+    std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
+    std::cin.get(); return 0;}
+    if(veiksmas==10) {tyrimasVektoriu(); std::cout << "\nSpauskite Enter, kad uzdarytumete programa...\n";
+    std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
+    std::cin.get();  return 0;}
     cout<<"Kaip norite apskaičiuoti galutinį balą? \n 1 - pagal vidurkį \n 2 - pagal medianą \n Pasirinkite: ";
     pasirinkimas = skaiciu_mastelis("", 1, 2);  
     cout<<"Kaip norite rikiuoti rezultatus? \n 1 - pagal vardą \n 2 - pagal pavardę \n 3 - pagal galutinį balą \n Pasirinkite: ";
