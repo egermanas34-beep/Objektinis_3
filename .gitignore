@@ -11,6 +11,60 @@
 *.sln.docstates
 *.env
 
+# Build folders
+build/
+build-tests/
+cmake-build-debug/
+cmake-build-release/
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+Testing/
+compile_commands.json
+# Executables
+*.exe
+*.out
+*.app
+# Object files
+*.o
+*.obj
+*.so
+*.dll
+*.a
+*.lib
+*.txt
+# Visual Studio Code
+.vscode/
+# Logs
+*.log
+# Temporary files
+*.tmp
+*.temp
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+# doxygen
+doxyman/
+Doxyfile
+# GoogleTest
+googletest/
+# GoogleTest build artifacts
+googletest/build/
+
+# CLion
+.idea/
+
+# Debug folders
+Debug/
+Release/
+x64/
+x86/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
